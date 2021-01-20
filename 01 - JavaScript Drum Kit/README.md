@@ -5,3 +5,4 @@ Simulez une page de batterie. Losque l'utilisateur appuie sur les touches ASDFGJ
 ## Page GitHub de l'Application
 
 ## Mise en page
+![](ProjetMockUp.png)
