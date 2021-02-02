@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Flex Panels 💪</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css"
 </head>
 <body>
   <style>
@@ -105,6 +106,28 @@
   </div>
 
   <script>
+
+// Cliquez sur une image pour l'agrandir et déplacez le texte du haut et du bas de l'image.
+// Après avoir cliqué sur l'image agrandie, l'image est réduite et le texte en haut et en bas de l'image
+// est compressé.
+// Dans les styles CSS correspondants, la durée de l'animation et d'autres caractéristiques ont été
+// définies.
+
+
+    const panels = document.querySelectorAll('.panel')
+
+    const togglePanel = (p, e) => {
+      p.classList.toggle('open');
+    }
+
+    const toggleText = (p, e) => {
+      if (e.propertyName.includes('flex')) p.classList.toggle('open-active');
+    }
+
+    panels.forEach(panel => {
+      panel.addEventListener('click', togglePanel.bind(null, panel))
+      panel.addEventListener('transitionend', toggleText.bind(null, panel))
+    });
 
   </script>
 
